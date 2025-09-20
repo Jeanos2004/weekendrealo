@@ -21,7 +21,7 @@ export function BrutSidebarFixed() {
   const pathname = usePathname();
 
   const categories = [
-    { name: "France", icon: Flag, href: "/france" },
+    { name: "Guinée", icon: Flag, href: "/guinee" },
     { name: "International", icon: Globe, href: "/international" },
     { name: "Environnement", icon: Zap, href: "/environnement" },
     { name: "Technologie", icon: Zap, href: "/technologie" },

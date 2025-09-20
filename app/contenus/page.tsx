@@ -1,33 +1,34 @@
-import { Navigation } from "@/components/navigation"
-import { ContentGrid } from "@/components/content-grid"
-import { ContentFilters } from "@/components/content-filters"
-import { Footer } from "@/components/footer"
+import { BrutLayout } from "@/components/brut-layout";
+import { BrutTikTokFeed } from "@/components/brut-tiktok-feed";
+import { BrutSlider } from "@/components/brut-slider";
+import {
+  talentsData,
+  projetsData,
+  cultureData,
+  natureData,
+  tiktokVideosData,
+} from "@/lib/data";
 
 export default function ContenusPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
-      <main className="pt-16">
-        {/* Hero Section */}
-        <section className="py-20 bg-foreground text-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl">
-              <h1 className="text-5xl sm:text-6xl font-bold mb-6">CONTENUS</h1>
-              <p className="text-xl text-background/80 leading-relaxed">
-                Découvrez les histoires inspirantes de jeunes qui transforment leurs rêves en réalité. Chaque week-end,
-                de nouveaux contenus pour vous motiver et vous inspirer.
-              </p>
-            </div>
+    <BrutLayout>
+      <div className="py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-8">
+            <h1 className="text-4xl font-bold mb-4">Contenus</h1>
+            <p className="text-lg text-muted-foreground">
+              Tous nos contenus pour découvrir les jeunes talents et leurs
+              projets. Vidéos, articles, documentaires et bien plus.
+            </p>
           </div>
-        </section>
 
-        {/* Filters */}
-        <ContentFilters />
-
-        {/* Content Grid */}
-        <ContentGrid />
-      </main>
-      <Footer />
-    </div>
-  )
+          <BrutTikTokFeed videos={tiktokVideosData} />
+          <BrutSlider title="Talents" items={talentsData} />
+          <BrutSlider title="Projets" items={projetsData} />
+          <BrutSlider title="Culture" items={cultureData} />
+          <BrutSlider title="Nature" items={natureData} />
+        </div>
+      </div>
+    </BrutLayout>
+  );
 }

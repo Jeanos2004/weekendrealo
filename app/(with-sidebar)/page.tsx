@@ -1,4 +1,3 @@
-import { BrutLayout } from "@/components/brut-layout";
 import { BrutHero } from "@/components/brut-hero";
 import { BrutFeatured } from "@/components/brut-featured";
 import { BrutSlider } from "@/components/brut-slider";
@@ -34,7 +33,7 @@ const latestVideosData = [
 
 export default function HomePage() {
   return (
-    <BrutLayout>
+    <>
       <BrutHero />
       <BrutFeatured />
       <BrutTikTokFeed videos={tiktokVideosData} />
@@ -42,6 +41,6 @@ export default function HomePage() {
       <BrutSlider title="Projets" items={projetsData} />
       <BrutSlider title="Culture" items={cultureData} />
       <BrutSlider title="Nature" items={natureData} />
-    </BrutLayout>
+    </>
   );
 }
