@@ -1,24 +1,10 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Montserrat, Poppins } from "next/font/google";
 import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-  display: "swap",
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-poppins",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "WeekendRealo - Inspire. Motiver. Réussir.",
@@ -48,10 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="fr"
-      className={`${montserrat.variable} ${poppins.variable} ${GeistMono.variable}`}
-    >
+    <html lang="fr" className={`${GeistMono.variable}`}>
       <body className="font-sans antialiased">
         <ThemeProvider
           attribute="class"

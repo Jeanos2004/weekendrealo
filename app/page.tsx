@@ -1,3 +1,5 @@
+"use client";
+
 import { BrutLayout } from "@/components/brut-layout";
 import { BrutHero } from "@/components/brut-hero";
 import { BrutFeatured } from "@/components/brut-featured";
@@ -31,6 +33,9 @@ const latestVideosData = [
     time: "Il y a 3h",
   },
 ];
+
+// Forcer le rendu côté client
+export const dynamic = "force-dynamic";
 
 export default function HomePage() {
   return (
